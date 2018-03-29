@@ -59,7 +59,7 @@ using namespace std;
 namespace AprilTags
 {
 
-std::vector<TagDetection> TagDetector::extractTags(const cv::Mat& image)
+std::vector<TagDetection> TagDetector::extractTags(const cv::Mat& image, float sigma)
 {
 
 #ifdef APRILTAGS_SHOW_TIMING
@@ -151,7 +151,6 @@ std::vector<TagDetection> TagDetector::extractTags(const cv::Mat& image)
      * harder to decode very small tags. Reasonable values are 0, or
      * [0.8, 1.5].
      */
-    float sigma = 0;
 
     //! Gaussian smoothing kernel applied to image (0 == no filter).
     /*! Used when detecting the outline of the box. It is almost always

@@ -39,7 +39,7 @@ public:
         storage.resize(expected_width * expected_height * 4);
     }
 
-    std::vector<TagDetection> extractTags(const cv::Mat& image);
+    std::vector<TagDetection> extractTags(const cv::Mat& image, float sigma = 0);
     int verifyQuad(const std::vector<std::pair<float, float>>& p, const cv::Mat& gray);
 
 private:
