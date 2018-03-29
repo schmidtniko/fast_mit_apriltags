@@ -12,6 +12,6 @@ find_package(Eigen3 REQUIRED NO_MODULE)
 
 target_include_directories(apriltags PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/include)
 target_include_directories(apriltags PRIVATE ${CMAKE_CURRENT_SOURCE_DIR}/include/AprilTags)
-target_link_libraries(apriltags ${OpenCV_LIBS})
+target_link_libraries(apriltags Eigen3::Eigen ${OpenCV_LIBS})
 
 add_subdirectory(example)
