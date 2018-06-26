@@ -15,3 +15,8 @@ target_include_directories(apriltags PRIVATE ${CMAKE_CURRENT_SOURCE_DIR}/include
 target_link_libraries(apriltags Eigen3::Eigen ${OpenCV_LIBS})
 
 add_subdirectory(example)
+
+if ("${CMAKE_CXX_COMPILER_ID}" STREQUAL "GNU")
+    target_compile_definitions(apriltags PUBLIC EIGEN_DONT_ALIGN_STATICALLY)
+    target_compile_definitions(apriltags PUBLIC _USE_MATH_DEFINES)
+endif()
